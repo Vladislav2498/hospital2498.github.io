@@ -23,17 +23,19 @@ const getServerData = async () => {
     document.querySelector(".header__logIn--btn").innerText = "Create Visit";
     // переписать на вызов модалки ивент листенер обязателен
     JSON.parse(getCards).forEach((element) => {
-      const { name, doctor, description, priority, visitPurpouse, status } =
+      const { name, doctor, description, priority, visitPurpouse, status, id } =
         element;
-      new VisitCards(
+      const newElement = new VisitCards(
         name,
         doctor,
         description,
         priority,
         visitPurpouse,
-        status
-      ).render();
-      visitsArray.push(element);
+        status,
+        id
+      );
+      visitsArray.push(newElement);
+      newElement.render();
     });
   }
 };

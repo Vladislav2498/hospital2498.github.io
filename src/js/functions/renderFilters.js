@@ -1,6 +1,6 @@
 import filterArr from "./filterCards.js";
 import visitsArray from "../index.js";
-import filterBySelect from "./filterCardsBySelect.js";
+// import filterBySelect from "./filterCardsBySelect.js";
 const renderSearchFilters = () => {
   const container = document.querySelector(".main__wrapper");
   const searchInput = document.createElement("input");
@@ -31,14 +31,14 @@ const renderSearchFilters = () => {
   `
   );
 
-  formStatus.addEventListener("change", (e) => {
-    console.log(e.target.value);
-    filterBySelect();
-  });
-  formPriority.addEventListener("change", (e) => {
-    console.log(e.target.value);
-    filterBySelect();
-  });
+  // formStatus.addEventListener("change", (e) => {
+  //   console.log(e.target.value);
+  //   filterBySelect();
+  // });
+  // formPriority.addEventListener("change", (e) => {
+  //   console.log(e.target.value);
+  //   filterBySelect();
+  // });
   searchInput.addEventListener("input", (e) => {
     filterArr(visitsArray, e.target.value);
   });
