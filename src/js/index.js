@@ -11,7 +11,6 @@ let visitsArray = [];
 export default visitsArray;
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(localStorage);
   if (localStorage.Authorization) {
     getServerData();
     renderSearchFilters();

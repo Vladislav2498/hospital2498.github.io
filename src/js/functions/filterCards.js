@@ -1,21 +1,21 @@
 import renderFilteredCards from "./renderFilteredCards.js";
 
-export let inputFilteredArr = [];
+// export let inputFilteredArr = [];
 
 const container = document.querySelector(".card_container");
-const filterArr = (dataArray, filterByValue) => {
-  const filteredArr = dataArray.filter(
-    ({ title, description }) =>
-      title.toLowerCase().includes(filterByValue.toLowerCase()) ||
+const filterArr = async (dataArray, filterByValue) => {
+  let filteredArr = await dataArray.filter(
+    ({ name, description }) =>
+      name.toLowerCase().includes(filterByValue.toLowerCase()) ||
       description.toLowerCase().includes(filterByValue.toLowerCase())
   );
-  inputFilteredArr = filteredArr;
+  // inputFilteredArr = filteredArr;
   // card_container
   if (filteredArr.length !== 0) {
     container.innerHTML = "";
     renderFilteredCards(filteredArr);
   } else {
-    return;
+    return (container.innerHTML = "<h2>No results found</h2>");
   }
 };
 

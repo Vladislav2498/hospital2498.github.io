@@ -1,5 +1,16 @@
+import visitsArray from "../index.js";
+
 class VisitCards {
-  constructor(name, doctor, description, priority, visitPurpouse, status) {
+  constructor(
+    name,
+    doctor,
+    description,
+    priority,
+    visitPurpouse,
+    status,
+    id,
+    display = "none"
+  ) {
     this.name = name;
     this.doctor = doctor;
     this.description = description;
@@ -8,9 +19,12 @@ class VisitCards {
     this.status = status;
     this.cardWrapper = document.createElement("div");
     this.moreInfo = document.createElement("div");
+    this.id = id;
+    this.display = display;
   }
+
   createElements() {
-    this.moreInfo.style.display = "none";
+    this.moreInfo.style.display = `${this.display}`;
     this.showMoreBtn = document.createElement("button");
     this.showMoreBtn.innerText = "show more";
     this.moreInfo.insertAdjacentHTML(
@@ -21,12 +35,24 @@ class VisitCards {
         `
     );
     this.showMoreBtn.addEventListener("click", (e) => {
-      if (this.moreInfo.style.display === "none") {
+      if (this.display === "none") {
         this.moreInfo.style.display = "block";
         this.showMoreBtn.innerText = "show less";
+        this.display = "block";
+        visitsArray.find((el) => {
+          if (el.id === this.id) {
+            el.display = "block";
+          }
+        });
       } else {
         this.moreInfo.style.display = "none";
         this.showMoreBtn.innerText = "show more";
+        this.display = "none";
+        visitsArray.find((el) => {
+          if (el.id === this.id) {
+            el.display = "none";
+          }
+        });
       }
     });
     this.cardWrapper.insertAdjacentHTML(
