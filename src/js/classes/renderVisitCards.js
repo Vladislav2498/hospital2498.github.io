@@ -46,15 +46,7 @@ class VisitCards {
   }
 }
 
-new VisitCards(
-  "Sasha",
-  "Dentist",
-  "BLAVLABLA",
-  "High",
-  "Prosto tak",
-  "done"
-).render();
-
+export default VisitCards;
 // name,
 // doctor,
 // showmoreBtn,

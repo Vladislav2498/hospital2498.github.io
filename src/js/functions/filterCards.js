@@ -1,6 +1,6 @@
 import renderFilteredCards from "./renderFilteredCards.js";
 
-export const inputFilteredArr = [];
+export let inputFilteredArr = [];
 
 const container = document.querySelector(".card_container");
 const filterArr = (dataArray, filterByValue) => {
