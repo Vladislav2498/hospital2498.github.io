@@ -23,6 +23,8 @@ const getServerData = async () => {
         age,
         weight,
         case: status,
+        status: requestStatus,
+        prioriy,
       } = element;
       visitsArray.push(element);
       document.querySelector(".card_container").insertAdjacentHTML(
@@ -36,6 +38,9 @@ const getServerData = async () => {
         <p>${bp}</p>
         <p>${weight}</p>
         <p>${status}</p>
+        <p>${requestStatus}</p>
+        <p>${prioriy}</p>
+
         </div>
       `
       );
