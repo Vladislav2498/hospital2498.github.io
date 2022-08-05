@@ -17,8 +17,10 @@ class Modal {
     this.submitBtn.innerText = "Submit";
     this.div.classList.add("modal", "container");
     this.form.classList.add("modal__form");
+    this.inputEmail.classList.add("input__information");
     this.labelEmail.classList.add("modal__label");
     this.labelEmail.innerText = "e-mail";
+    this.inputPassowrd.classList.add("input__information");
     this.labelPassword.innerText = "password";
 
     this.labelPassword.classList.add("modal__label");

@@ -1,0 +1,49 @@
+.modal {
+    position: fixed;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.9;
+    background-color: white;
+    max-width: 444px;
+    max-height: 400px;
+    padding-bottom: 38px;
+}
+.modal__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal__label {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.input__information {
+    width: 100%;
+    margin-top: 12px;
+    border: none;
+    font-family: "Ubuntu 400";
+    font-size: 14px;
+    padding: 0;
+    height: 45px;
+    border: 1px solid rgba(242, 242, 242, 1);
+    text-indent: 20px;
+    outline: none;
+}
+
+.input__information::placeholder {
+    color: rgba(190, 190, 190, 1);
+}
+
+.input__information:focus {
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.21);
+}
+

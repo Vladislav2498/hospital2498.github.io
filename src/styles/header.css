@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Roboto:wght@500&display=swap');
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header__title {
+    font-family: DM Sans;
+    color: rgb(98, 177, 246);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.header__logIn--btn {
+    font-size: 16px;
+    color: white;
+    background: rgb(98, 177, 246);
+    border: 0;
+    width: 160px;
+    height: 48px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+}
+
+.header__logIn--btn:hover {
+    background: rgba(48, 93, 184, 0.9);
+}
+
