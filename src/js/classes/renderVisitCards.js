@@ -30,8 +30,8 @@ class VisitCards {
     this.moreInfo.insertAdjacentHTML(
       "afterbegin",
       `
-        <p>${this.description}</p>
-        <p>${this.visitPurpouse}</p>
+        <p><span>DESCRIPTION</span>: ${this.description}</p>
+        <p><span>VISIT PURPOUSE</span>:${this.visitPurpouse}</p>
         `
     );
     this.showMoreBtn.addEventListener("click", (e) => {
@@ -58,10 +58,10 @@ class VisitCards {
     this.cardWrapper.insertAdjacentHTML(
       "afterbegin",
       `
-        <h2>${this.name}</h2>
-        <h3>${this.doctor}</h3>
-        <p>${this.priority}</p>
-        <p>${this.status}</p>
+        <h2><span>NAME</span>:${this.name}</h2>
+        <h3><span>DOCTOR</span>:${this.doctor}</h3>
+        <p><span>PRIORITY</span>:${this.priority}</p>
+        <p><span>STATUS</span>:${this.status}</p>
         `
     );
     this.cardWrapper.append(this.moreInfo, this.showMoreBtn);
