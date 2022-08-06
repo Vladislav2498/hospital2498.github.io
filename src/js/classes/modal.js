@@ -13,17 +13,18 @@ class Modal {
   }
 
   createElement() {
-    this.modalBackground.classList.add("modal__background");
+    this.modalBackground.classList.add("login__modal--background");
     this.submitBtn.innerText = "Submit";
-    this.div.classList.add("modal", "container");
-    this.form.classList.add("modal__form");
-    this.inputEmail.classList.add("input__information");
-    this.labelEmail.classList.add("modal__label");
+    this.div.classList.add("login__modal", "container");
+    this.form.classList.add("login__modal--form");
+    this.inputEmail.classList.add("login__input--information");
+    this.labelEmail.classList.add("login__modal--label");
     this.labelEmail.innerText = "e-mail";
-    this.inputPassowrd.classList.add("input__information");
+    this.inputPassowrd.classList.add("login__input--information");
     this.labelPassword.innerText = "password";
+    this.submitBtn.classList.add('login__submit--btn')
 
-    this.labelPassword.classList.add("modal__label");
+    this.labelPassword.classList.add("login__modal--label");
     this.form.append(
       this.labelEmail,
       this.inputEmail,
