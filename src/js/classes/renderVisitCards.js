@@ -5,17 +5,17 @@ class VisitCards {
     name,
     doctor,
     description,
-    priority,
-    visitPurpouse,
+    urgency,
+    purpose,
     status,
     id,
-    display = "none"
+    display
   ) {
     this.name = name;
     this.doctor = doctor;
     this.description = description;
-    this.priority = priority;
-    this.visitPurpouse = visitPurpouse;
+    this.priority = urgency;
+    this.visitPurpouse = purpose;
     this.status = status;
     this.cardWrapper = document.createElement("div");
     this.moreInfo = document.createElement("div");
@@ -27,6 +27,11 @@ class VisitCards {
     this.moreInfo.style.display = `${this.display}`;
     this.showMoreBtn = document.createElement("button");
     this.showMoreBtn.innerText = "show more";
+    this.editBtn = document.createElement("button");
+    this.editBtn.innerText = "edit";
+    this.editBtn.addEventListener("click", () => {
+      console.log("modal with editing ");
+    });
     this.moreInfo.insertAdjacentHTML(
       "afterbegin",
       `
@@ -35,6 +40,7 @@ class VisitCards {
         `
     );
     this.showMoreBtn.addEventListener("click", (e) => {
+      console.log(e.target.textContent);
       if (this.display === "none") {
         this.moreInfo.style.display = "block";
         this.showMoreBtn.innerText = "show less";
@@ -42,6 +48,17 @@ class VisitCards {
         visitsArray.find((el) => {
           if (el.id === this.id) {
             el.display = "block";
+            el.showMoreBtn.innerText = "show less";
+
+            console.log(
+              "THIS ",
+              this.showMoreBtn.textContent,
+              "has to be EL",
+              el.showMoreBtn.textContent
+            );
+
+            // el.showMoreBtn.innerText = "show less";
+            // console.log(el.showMoreBtn);
           }
         });
       } else {
@@ -51,6 +68,16 @@ class VisitCards {
         visitsArray.find((el) => {
           if (el.id === this.id) {
             el.display = "none";
+            el.showMoreBtn.innerText = "show more";
+            console.log(
+              "THIS ",
+              this.showMoreBtn.textContent,
+              "has to be EL",
+              el.showMoreBtn.textContent
+            );
+
+            // el.showMoreBtn.innerText = "show more";
+            // console.log(el.showMoreBtn);
           }
         });
       }
@@ -64,7 +91,7 @@ class VisitCards {
         <p><span>STATUS</span>:${this.status}</p>
         `
     );
-    this.cardWrapper.append(this.moreInfo, this.showMoreBtn);
+    this.cardWrapper.append(this.moreInfo, this.showMoreBtn, this.editBtn);
   }
   render(selector = document.querySelector(".card_container")) {
     this.createElements();
@@ -73,6 +100,20 @@ class VisitCards {
 }
 
 export default VisitCards;
+
+// NEW DATA
+// doctor,
+//   name,
+//   purpose,
+//   description,
+//   urgency,
+//   lastVisit,
+//   age,
+//   pressure,
+//   massIndex,
+//   diseases,
+//   status;
+
 // name,
 // doctor,
 // showmoreBtn,

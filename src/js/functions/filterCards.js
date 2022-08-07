@@ -30,7 +30,6 @@ const filterArr = async (
   priorityValue,
   statusValue
 ) => {
-  console.log(priorityValue, statusValue);
   let filteredArr = await dataArray.filter(
     ({ name, description }) =>
       name.toLowerCase().includes(filterByValue.toLowerCase()) ||

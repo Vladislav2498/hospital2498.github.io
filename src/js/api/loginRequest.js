@@ -23,7 +23,13 @@ const userLogin = async (email, password) => {
     getServerData();
     renderSearchFilters();
   } else {
-    console.log("Incorrect data");
+    document.querySelector(".login__error")?.remove();
+    document.querySelector(".modal").insertAdjacentHTML(
+      "beforeend",
+      `
+    <div class="login__error" style="color:red">Incorrect username or password</div>
+    `
+    );
   }
 };
 
