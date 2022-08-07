@@ -1,19 +1,35 @@
-const renderFilteredCards = (array) => {
-  const container = document.querySelector(".card_container");
-  array.forEach(({ title, doctor, description, age, bp, weight }) => {
-    container.insertAdjacentHTML(
-      "afterbegin",
-      `
-        <div class="card">
-        <h2>${title}</h2>
-        <h3>${doctor}</h3>
-        <p>${description}</p>
-        <p>${age}</p>
-        <p>${bp}</p>
-        <p>${weight}</p>
-        </div>
-      `
-    );
+import visitsArray from "../index.js";
+import VisitCards from "../classes/renderVisitCards.js";
+import checkAndFilterCard from "./checkAndFilterCards.js";
+let renderFilteredCards = (array) => {
+  array.forEach((element) => {
+    const { doctor, display } = element;
+    checkAndFilterCard(doctor, element, display);
+    // const { name, doctor, description, priority, visitPurpouse, status, id } =
+    //   element;
+    // if (element.display === "none") {
+    //   new VisitCards(
+    //     name,
+    //     doctor,
+    //     description,
+    //     priority,
+    //     visitPurpouse,
+    //     status,
+    //     id,
+    //     "none"
+    //   ).render();
+    // } else {
+    //   new VisitCards(
+    //     name,
+    //     doctor,
+    //     description,
+    //     priority,
+    //     visitPurpouse,
+    //     status,
+    //     id,
+    //     "block"
+    //   ).render();
+    // }
   });
 };
 

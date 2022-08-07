@@ -1,3 +1,7 @@
+import ModalLera from "../classes/modal-lera.js";
+import VisitCards from "../classes/renderVisitCards.js";
+import checkCard from "../functions/checkAndRenderClass.js";
+import openLoginModal from "../functions/login.js";
 import visitsArray from "../index.js";
 const getServerData = async () => {
   const getCards = await fetch("https://ajax.test-danit.com/api/v2/cards/", {
@@ -6,6 +10,11 @@ const getServerData = async () => {
       Authorization: `${localStorage.getItem("Authorization")}`,
     },
   }).then((res) => res.text());
+  const logInBtn = document.querySelector(".header__logIn--btn");
+  logInBtn.removeEventListener("click", openLoginModal);
+  logInBtn.addEventListener("click", () => {
+    new ModalLera().render();
+  });
   if (JSON.parse(getCards).length === 0) {
     document.querySelector(".header__logIn--btn").innerText = "Create Visit";
     document.querySelector(
@@ -15,30 +24,21 @@ const getServerData = async () => {
     document.querySelector(".header__logIn--btn").innerText = "Create Visit";
     // переписать на вызов модалки ивент листенер обязателен
     JSON.parse(getCards).forEach((element) => {
-      const {
-        title,
-        description,
-        doctor,
-        bp,
-        age,
-        weight,
-        case: status,
-      } = element;
-      visitsArray.push(element);
-      document.querySelector(".card_container").insertAdjacentHTML(
-        "afterbegin",
-        `
-        <div class="card">
-        <h2>${title}</h2>
-        <h3>${doctor}</h3>
-        <p>${description}</p>
-        <p>${age}</p>
-        <p>${bp}</p>
-        <p>${weight}</p>
-        <p>${status}</p>
-        </div>
-      `
-      );
+      const { doctor } = element;
+      checkCard(doctor, element);
+      // const { name, doctor, description, urgency, purpose, status, id } =
+      //   element;
+      // const newElement = new VisitCards(
+      //   name,
+      //   doctor,
+      //   description,
+      //   urgency,
+      //   purpose,
+      //   status,
+      //   id
+      // );
+      // visitsArray.push(newElement);
+      // newElement.render();
     });
   }
 };
