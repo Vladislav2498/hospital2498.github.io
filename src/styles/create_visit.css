@@ -1,5 +1,5 @@
-.container-lera {
-    max-width: 1200px;
+.modal {
+    max-width: 1100px;
     margin: 0 auto;
     background: grey;
     z-index: 20;
@@ -8,26 +8,38 @@
     font-family: Roboto;
 }
 
-.container-lera p {
+.row {
+    margin-top: 0;
+}
+
+.col-12 {
+    margin-top: 20px;
+}
+
+.col-md-12 {
+    margin-top: 20px;
+}
+
+.container  p {
     margin-bottom: 8px;
 }
 
-.container-lera select {
+.container select {
     color: #6c757d;
     border-radius: 0;
 }
 
-.container-lera select:focus {
+.container select:focus {
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.21);
     border: none;
 }
 
-.container-lera input {
+.container input {
     border: 1px solid rgb(215, 215, 215);
     border-radius: 0;
 }
 
-.container-lera input:focus {
+.container input:focus {
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.21);
     border: none;
 }
