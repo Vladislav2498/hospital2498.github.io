@@ -7,6 +7,7 @@ const logInBtn = document.querySelector(".header__logIn--btn");
 logInBtn.addEventListener("click", openLoginModal);
 
 let visitsArray = [];
+console.log(visitsArray);
 
 export default visitsArray;
 
