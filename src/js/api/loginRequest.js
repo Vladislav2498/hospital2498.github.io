@@ -14,7 +14,7 @@ const userLogin = async (email, password) => {
   }).then((res) => checkResStatus(res));
   if (token) {
     localStorage.setItem("Authorization", `Bearer ${token}`);
-    document.querySelector(".modal__background").remove();
+    document.querySelector(".login__modal--background").remove();
     // const logInBtn = document.querySelector(".header__logIn--btn");
     // logInBtn.removeEventListener("click", openLoginModal);
     // logInBtn.addEventListener("click", () => {
