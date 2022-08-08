@@ -27,6 +27,7 @@ const checkCard = (doctor, element) => {
       status,
       id,
       "none",
+      "show more",
       age,
       pressure,
       massIndex,
@@ -54,6 +55,7 @@ const checkCard = (doctor, element) => {
       status,
       id,
       "none",
+      "show more",
       lastVisit
     );
     visitsArray.push(newElement);
@@ -70,6 +72,7 @@ const checkCard = (doctor, element) => {
       status,
       id,
       "none",
+      "show more",
       age
     );
     visitsArray.push(newElement);

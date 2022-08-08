@@ -9,9 +9,20 @@ class VisitCardsDentist extends VisitCards {
     status,
     id,
     display = "none",
+    showMoreBtnText = "show more",
     lastVisit
   ) {
-    super(name, doctor, description, urgency, purpose, status, id, display);
+    super(
+      name,
+      doctor,
+      description,
+      urgency,
+      purpose,
+      status,
+      id,
+      display,
+      showMoreBtnText
+    );
     this.lastVisit = lastVisit;
   }
   createElements() {

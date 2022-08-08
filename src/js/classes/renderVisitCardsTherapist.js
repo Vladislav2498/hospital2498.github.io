@@ -10,9 +10,20 @@ class VisitCardsTherapist extends VisitCards {
     status,
     id,
     display = "none",
+    showMoreBtnText = "show more",
     age
   ) {
-    super(name, doctor, description, urgency, purpose, status, id, display);
+    super(
+      name,
+      doctor,
+      description,
+      urgency,
+      purpose,
+      status,
+      id,
+      display,
+      showMoreBtnText
+    );
     this.age = age;
   }
   createElements() {
