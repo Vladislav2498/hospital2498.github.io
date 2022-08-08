@@ -9,7 +9,8 @@ class VisitCards {
     purpose,
     status,
     id,
-    display
+    display,
+    showMoreBtnText
   ) {
     this.name = name;
     this.doctor = doctor;
@@ -21,12 +22,13 @@ class VisitCards {
     this.moreInfo = document.createElement("div");
     this.id = id;
     this.display = display;
+    this.showMoreBtnText = showMoreBtnText;
   }
 
   createElements() {
     this.moreInfo.style.display = `${this.display}`;
     this.showMoreBtn = document.createElement("button");
-    this.showMoreBtn.innerText = "show more";
+    this.showMoreBtn.innerText = this.showMoreBtnText;
     this.editBtn = document.createElement("button");
     this.editBtn.innerText = "edit";
     this.editBtn.addEventListener("click", () => {

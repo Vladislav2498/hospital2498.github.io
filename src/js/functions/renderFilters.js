@@ -3,8 +3,8 @@ import visitsArray from "../index.js";
 // import filterBySelect from "./filterCardsBySelect.js";
 const renderSearchFilters = () => {
   const container = document.querySelector(".main__wrapper");
-  const filterContainer = document.createElement("div")
-  filterContainer.classList.add('filter-container');
+  const filterContainer = document.createElement("div");
+  filterContainer.classList.add("filter-container");
   const searchInput = document.createElement("input");
   const searchDropMenu = document.createElement("input");
   const formStatus = document.createElement("form");
@@ -36,8 +36,8 @@ const renderSearchFilters = () => {
   formStatus.addEventListener("change", async (e) => {
     filterArr(
       visitsArray,
-      e.target.closest(".main__wrapper").children[0].value,
-      e.target.closest(".main__wrapper").children[1].children[1].value,
+      e.target.closest(".filter-container").children[1].value,
+      e.target.closest(".filter-container").children[2].children[1].value,
       e.target.value
     );
   });
@@ -57,7 +57,7 @@ const renderSearchFilters = () => {
       e.target.nextSibling.nextSibling.children[1].value
     );
   });
-  const header = document.createElement('h1')
+  const header = document.createElement("h1");
   header.innerText = "Find card";
   filterContainer.prepend(header, searchInput, formPriority, formStatus);
   container.prepend(filterContainer);
@@ -65,34 +65,3 @@ const renderSearchFilters = () => {
 
 // експортируем после рендера
 export default renderSearchFilters;
-
-// {
-//   "title": "Визит к кардиологу",
-//   "description": "Плановый визит",
-//   "doctor": "Cardiologist",
-//   "bp": "24",
-//   "age": "23",
-//   "weight": "70",
-//   "case": "urgent"
-// }
-
-{
-  /* <form class="select__status">
-<label>Choose a status</label>
-<select>
-  <option selected disabled hidden>Status</option>
-  <option>Open</option>
-  <option>Done</option>
-</select>
-</form>
-
-<form class="select__priority">
-<label>Choose a visit priority</label>
-<select>
-  <option selected disabled hidden>Priority</option>
-  <option>High</option>
-  <option>Medium</option>
-  <option>Low</option>
-</select>
-</form> */
-}

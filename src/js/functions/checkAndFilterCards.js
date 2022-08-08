@@ -28,6 +28,7 @@ const checkAndFilterCard = (doctor, element, display) => {
         status,
         id,
         "none",
+        "show more",
         age,
         pressure,
         massIndex,
@@ -54,6 +55,7 @@ const checkAndFilterCard = (doctor, element, display) => {
         status,
         id,
         "none",
+        "show more",
         lastVisit
       );
       newElement.render();
@@ -77,6 +79,7 @@ const checkAndFilterCard = (doctor, element, display) => {
         status,
         id,
         "none",
+        "show more",
         age
       );
       newElement.render();
@@ -105,6 +108,7 @@ const checkAndFilterCard = (doctor, element, display) => {
         status,
         id,
         "block",
+        "show less",
         age,
         pressure,
         massIndex,
@@ -131,6 +135,7 @@ const checkAndFilterCard = (doctor, element, display) => {
         status,
         id,
         "block",
+        "show less",
         lastVisit
       );
       newElement.render();
@@ -154,6 +159,7 @@ const checkAndFilterCard = (doctor, element, display) => {
         status,
         id,
         "block",
+        "show less",
         age
       );
       newElement.render();
