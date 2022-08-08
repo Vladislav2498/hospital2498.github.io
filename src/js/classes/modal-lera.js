@@ -266,6 +266,7 @@ const getInputValuesRecieveRes = () => {
 };
 const postRequest = async (
   doctorName,
+  searchDoctor,
   name,
   purpose,
   description,
@@ -298,9 +299,12 @@ const postRequest = async (
         }),
       }
     ).then((response) => response.json());
+    console.log(recieveData);
     checkCard("Dentist", recieveData);
     document.querySelector(".modal-background").remove();
   } else if (doctorName === "Therapist") {
+    debugger;
+    console.log(ageTherapist);
     const recieveData = await fetch(
       "https://ajax.test-danit.com/api/v2/cards",
       {
@@ -320,6 +324,7 @@ const postRequest = async (
         }),
       }
     ).then((response) => response.json());
+    console.log(recieveData);
     checkCard("Therapist", recieveData);
     document.querySelector(".modal-background").remove();
   } else if (doctorName === "Cardiologist") {
