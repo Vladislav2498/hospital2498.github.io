@@ -4,6 +4,7 @@ import VisitCardsCardiologist from "../classes/renderVisitCardsCardiologist.js";
 import VisitCardsTherapist from "../classes/renderVisitCardsTherapist.js";
 
 const checkCard = (doctor, element) => {
+  debugger;
   if (doctor === "Cardiologist") {
     const {
       name,
@@ -13,7 +14,7 @@ const checkCard = (doctor, element) => {
       purpose,
       status,
       id,
-      age,
+      ageCardiologist: age,
       pressure,
       massIndex,
       diseases,
@@ -61,8 +62,16 @@ const checkCard = (doctor, element) => {
     visitsArray.push(newElement);
     newElement.render();
   } else {
-    const { name, doctor, description, urgency, purpose, status, id, age } =
-      element;
+    const {
+      name,
+      doctor,
+      description,
+      urgency,
+      purpose,
+      status,
+      id,
+      ageTherapist: age,
+    } = element;
     const newElement = new VisitCardsTherapist(
       name,
       doctor,
