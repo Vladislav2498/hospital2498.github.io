@@ -3,6 +3,8 @@ import visitsArray from "../index.js";
 // import filterBySelect from "./filterCardsBySelect.js";
 const renderSearchFilters = () => {
   const container = document.querySelector(".main__wrapper");
+  const filterContainer = document.createElement("div")
+  filterContainer.classList.add('filter-container');
   const searchInput = document.createElement("input");
   const searchDropMenu = document.createElement("input");
   const formStatus = document.createElement("form");
@@ -55,7 +57,10 @@ const renderSearchFilters = () => {
       e.target.nextSibling.nextSibling.children[1].value
     );
   });
-  container.prepend(searchInput, formPriority, formStatus);
+  const header = document.createElement('h1')
+  header.innerText = "Find card";
+  filterContainer.prepend(header, searchInput, formPriority, formStatus);
+  container.prepend(filterContainer);
 };
 
 // експортируем после рендера

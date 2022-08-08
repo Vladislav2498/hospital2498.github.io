@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createVisitModalTEST/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/createVisitModalTEST/index.js" afterDir="false" />
+    <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="remake">
+      <change afterPath="$PROJECT_DIR$/src/styles/filter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/functions/renderFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/functions/renderFilters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/create_visit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/create_visit.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -78,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remake" />
+    <option name="LAST_COMMIT_MESSAGE" value="remake" />
   </component>
 </project>
