@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="remake">
-      <change afterPath="$PROJECT_DIR$/src/styles/filter.css" afterDir="false" />
+    <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="styles 2.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/functions/renderFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/functions/renderFilters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/create_visit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/create_visit.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,7 +69,17 @@
       <workItem from="1659711401730" duration="1366000" />
       <workItem from="1659803716202" duration="29000" />
       <workItem from="1659804114403" duration="308000" />
+      <workItem from="1659986980457" duration="60000" />
+      <workItem from="1660034749719" duration="797000" />
     </task>
+    <task id="LOCAL-00001" summary="styles 2.1">
+      <created>1659908243347</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659908243347</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +98,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remake" />
-    <option name="LAST_COMMIT_MESSAGE" value="remake" />
+    <MESSAGE value="styles 2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="styles 2.1" />
   </component>
 </project>
