@@ -4,7 +4,6 @@ import VisitCardsCardiologist from "../classes/renderVisitCardsCardiologist.js";
 import VisitCardsTherapist from "../classes/renderVisitCardsTherapist.js";
 
 const checkCard = (doctor, element) => {
-  debugger;
   if (doctor === "Cardiologist") {
     const {
       name,
