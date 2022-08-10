@@ -1,4 +1,9 @@
 import visitsArray from "../index.js";
+import ModalEdit from "./modal-edit.js";
+import ModalEditCardiologist from "./modal-editCardiologist.js";
+import DentistEdit from "./modal-editDentist.js";
+import ModalEditTherapist from "./modal-editTherapist.js";
+import ModalLera from "./modal-lera.js";
 
 class VisitCards {
   constructor(
@@ -32,7 +37,15 @@ class VisitCards {
     this.editBtn = document.createElement("button");
     this.editBtn.innerText = "edit";
     this.editBtn.addEventListener("click", () => {
-      console.log("modal with editing ");
+      if (this.doctor === "Dentist") {
+        new DentistEdit(this).render();
+      } else if (this.doctor === "Therapist") {
+        new ModalEditTherapist(this).render();
+      } else if (this.doctor === "Cardiologist") {
+        new ModalEditCardiologist(this).render();
+      } else {
+        console.log("UNKNOWN DOCTOR");
+      }
     });
     this.moreInfo.insertAdjacentHTML(
       "afterbegin",
@@ -42,7 +55,6 @@ class VisitCards {
         `
     );
     this.showMoreBtn.addEventListener("click", (e) => {
-      console.log(e.target.textContent);
       if (this.display === "none") {
         this.moreInfo.style.display = "block";
         this.showMoreBtn.innerText = "show less";
@@ -51,16 +63,6 @@ class VisitCards {
           if (el.id === this.id) {
             el.display = "block";
             el.showMoreBtn.innerText = "show less";
-
-            console.log(
-              "THIS ",
-              this.showMoreBtn.textContent,
-              "has to be EL",
-              el.showMoreBtn.textContent
-            );
-
-            // el.showMoreBtn.innerText = "show less";
-            // console.log(el.showMoreBtn);
           }
         });
       } else {
@@ -71,15 +73,6 @@ class VisitCards {
           if (el.id === this.id) {
             el.display = "none";
             el.showMoreBtn.innerText = "show more";
-            console.log(
-              "THIS ",
-              this.showMoreBtn.textContent,
-              "has to be EL",
-              el.showMoreBtn.textContent
-            );
-
-            // el.showMoreBtn.innerText = "show more";
-            // console.log(el.showMoreBtn);
           }
         });
       }

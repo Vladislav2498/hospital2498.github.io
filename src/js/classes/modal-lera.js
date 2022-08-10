@@ -127,14 +127,13 @@ class visitDentist extends ModalLera {
     super.createElement();
     this.submitButton.removeAttribute("disabled");
     this.optionDentist.setAttribute("selected", "value");
-    console.log(this.optionDentist);
     this.dentistContainer.classList.add(".dentistContainer");
     this.dentistContainer.insertAdjacentHTML(
       "beforeend",
       `
        <div id="dentist" class=" col-12">
-              <label for="inputLastVisitDentist" class="form-label">Your last visit to doctor:</label>
-              <input type="text" class="form-control" id="inputLastVisitDentist" placeholder="01.01.2021" ">
+              <label for="inputLastVisitDentist" class="form-label">Your last visit to doctor123:</label>
+              <input type="text" class="form-control" id="inputLastVisitDentist" placeholder="01.01.321" ">
         </div>
       `
     );

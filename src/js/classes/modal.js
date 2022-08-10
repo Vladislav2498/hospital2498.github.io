@@ -22,7 +22,7 @@ class Modal {
     this.labelEmail.innerText = "e-mail";
     this.inputPassowrd.classList.add("login__input--information");
     this.labelPassword.innerText = "password";
-    this.submitBtn.classList.add('login__submit--btn')
+    this.submitBtn.classList.add("login__submit--btn");
 
     this.labelPassword.classList.add("login__modal--label");
     this.form.append(
@@ -33,16 +33,16 @@ class Modal {
       this.submitBtn
     );
     this.div.append(this.form);
-    // this.submitBtn.addEventListener("click", (e) => {
-    //   e.preventDefault();
-    //   userLogin(this.inputEmail.value, this.inputPassowrd.value);
-    // });
+    this.submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      userLogin(this.inputEmail.value, this.inputPassowrd.value);
+    });
     this.modalBackground.append(this.div);
-    // this.modalBackground.addEventListener("click", (e) => {
-    //   if (e.target === this.modalBackground) {
-    //     this.modalBackground.remove();
-    //   }
-    // });
+    this.modalBackground.addEventListener("click", (e) => {
+      if (e.target === this.modalBackground) {
+        this.modalBackground.remove();
+      }
+    });
   }
   render(selector) {
     this.createElement();

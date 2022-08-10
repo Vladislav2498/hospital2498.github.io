@@ -15,16 +15,12 @@ const userLogin = async (email, password) => {
   if (token) {
     localStorage.setItem("Authorization", `Bearer ${token}`);
     document.querySelector(".login__modal--background").remove();
-    // const logInBtn = document.querySelector(".header__logIn--btn");
-    // logInBtn.removeEventListener("click", openLoginModal);
-    // logInBtn.addEventListener("click", () => {
-    //   new ModalLera().render();
-    // });
+
     getServerData();
     renderSearchFilters();
   } else {
     document.querySelector(".login__error")?.remove();
-    document.querySelector(".modal").insertAdjacentHTML(
+    document.querySelector(".login__modal").insertAdjacentHTML(
       "beforeend",
       `
     <div class="login__error" style="color:red">Incorrect username or password</div>
