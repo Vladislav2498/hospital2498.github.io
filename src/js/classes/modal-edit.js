@@ -1,6 +1,6 @@
 // import checkForDobuleSelect from "../functions/checkOptionSelect.js";
 
-import putRequest from "../functions/changeCard";
+import putRequest from "../functions/changeCard.js";
 
 class ModalEdit {
   constructor({
