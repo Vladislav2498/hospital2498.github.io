@@ -24,7 +24,7 @@ const userLogin = async (email, password) => {
     renderSearchFilters();
   } else {
     document.querySelector(".login__error")?.remove();
-    document.querySelector(".modal").insertAdjacentHTML(
+    document.querySelector(".login__modal--form").insertAdjacentHTML(
       "beforeend",
       `
     <div class="login__error" style="color:red">Incorrect username or password</div>
