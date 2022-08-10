@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="remake">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/cards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/create_visit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/create_visit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/classes/renderVisitCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/classes/renderVisitCards.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

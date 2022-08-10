@@ -24,6 +24,7 @@ class VisitCards {
     this.visitPurpouse = purpose;
     this.status = status;
     this.cardWrapper = document.createElement("div");
+    this.cardWrapper.classList.add('card__unit')
     this.moreInfo = document.createElement("div");
     this.id = id;
     this.display = display;
