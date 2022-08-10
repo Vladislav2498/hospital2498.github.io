@@ -67,6 +67,13 @@ class ModalLera {
     );
     this.submitButton.type = "submit";
     this.submitButton.setAttribute("disabled", true);
+
+    this.modalBackground.addEventListener("click", (e) => {
+      if (e.target === this.modalBackground) {
+        this.modalBackground.remove();
+      }
+    });
+
     this.closeButton.addEventListener("click", (e) => {
       this.container.innerHTML = "";
       this.container.classList.remove("modal");
