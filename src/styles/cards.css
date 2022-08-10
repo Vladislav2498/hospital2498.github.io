@@ -5,7 +5,7 @@
     font-family: Roboto;
 }
 
-.card_container div {
+.card__unit {
     background-color: white;
     opacity: 0.97;
     text-align: center;
@@ -13,27 +13,28 @@
     margin: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    height: min-content;
+    min-height: 250px;
 }
 
-.card_container h2 {
+.card__unit h2 {
     font-size: 30px;
     margin-top: 10px;
 }
 
-.card_container h3 {
+.card__unit h3 {
     font-size: 20px;
     margin-top: 10px;
 }
 
-.card_container p {
+.card__unit p {
     font-size: 15px;
     margin-top: 10px;
 }
 
-.card_container button {
+.card__unit button {
     border: none;
     outline: 0;
-    display: inline-block;
     padding: 8px;
     color: white;
     background-color: rgb(98, 177, 246);
@@ -44,7 +45,11 @@
     margin-top: 15px;
 }
 
-.card_container button:hover {
+.edit__btn {
+    /*margin-top: 18px;*/
+}
+
+.card__unit button:hover {
     background: rgba(48, 93, 184, 0.9);
     transition: 0.3s;
 }
