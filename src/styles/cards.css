@@ -22,8 +22,11 @@
     height: 25px;
     display: block;
     margin-left: auto;
-    background: url("../img/Delete-80_icon-icons.com_57340.svg");
     background-size: cover;
+    cursor: pointer;
+}
+
+.close-cross:hover {
 }
 
 .card__unit h2 {
