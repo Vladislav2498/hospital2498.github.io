@@ -1,6 +1,7 @@
 // import checkForDobuleSelect from "../functions/checkOptionSelect.js";
 
 import putRequest from "../functions/changeCard.js";
+import checkFields from "../functions/checkForRequiredFields.js";
 
 class ModalEdit {
   constructor({
@@ -52,11 +53,18 @@ class ModalEdit {
       "Normal",
       "High"
     );
+    this.optionsStatus = this.checkForPrioritySelect(
+      this.status,
+      "Open",
+      "Done"
+    );
   }
   deleteModal() {
     this.modalBackground.remove();
   }
-
+  checkForPrioritySelect(currentSelector, ...args) {
+    return [...args].filter((el) => el !== currentSelector);
+  }
   checkForDobuleSelect(currentSelector, ...args) {
     return [...args].filter((el) => el !== currentSelector);
   }
@@ -68,6 +76,7 @@ class ModalEdit {
     this.optionDefault.innerText = "choose doctor:";
     this.select.id = "select-doctor";
     this.select.classList.add("form-select");
+    this.select.setAttribute("disabled", "disabled");
     this.optionDentist.innerText = "Dentist";
     this.optionTherapist.innerText = "Therapist";
     this.optionCardiologist.innerText = "Cardiologist";
@@ -106,8 +115,68 @@ class ModalEdit {
       this.modalBackground.classList.remove("modal-background");
     });
     this.submitButton.addEventListener("click", (e) => {
-      console.log("FETCH CHANGE PATH");
-      putRequest(this);
+      const name = document.querySelector("#inputNameDentist")?.value;
+      const doctor = document.querySelector("#select-doctor")?.value;
+      const purpose = document.querySelector("#inputWorriesDentist").value;
+      const description = document.querySelector(
+        "#inputDescriptionDentist"
+      ).value;
+      const priority = document.querySelector("#inputUrgencyDentist")?.value;
+      const lastVisit = document.querySelector("#inputLastVisitDentist")?.value;
+      const ageCardiologist = document.querySelector(
+        "#inputAgeCardiologist"
+      )?.value;
+      const ageTherapist = document.querySelector("#inputAgeTherapist")?.value;
+      const pressure = document.querySelector(
+        "#inputPressureCardiologist"
+      )?.value;
+      const massIndex = document.querySelector(
+        "#inputIndexCardiologist"
+      )?.value;
+      const diseases = document.querySelector(
+        "#inputDiseasesCardiologist"
+      )?.value;
+      const status = document.querySelector("#visitStatus")?.value;
+
+      const checkRequiredFields = checkFields(
+        doctor,
+        name,
+        purpose,
+        description,
+        lastVisit,
+        ageCardiologist,
+        ageTherapist,
+        pressure,
+        massIndex,
+        diseases
+      );
+      if (checkRequiredFields) {
+        putRequest(
+          name,
+          doctor,
+          purpose,
+          description,
+          priority,
+          lastVisit,
+          ageCardiologist,
+          ageTherapist,
+          pressure,
+          massIndex,
+          diseases,
+          this.id,
+          status
+        );
+        this.deleteModal();
+      } else {
+        document.querySelector(".requiredFileds__error")?.remove();
+        const errContainer = document.querySelector(".modal").firstChild;
+        errContainer.insertAdjacentHTML(
+          "beforeend",
+          `
+        <div class="requiredFileds__error"> Please, complete all fields before submiting</div>
+        `
+        );
+      }
     });
     this.submitButton.innerText = "Submit changes";
     this.wrapperDiv.append(this.chooseDoctorP, this.select);
@@ -135,8 +204,21 @@ class ModalEdit {
       <option>${this.options[1]}</option>
       </select>  
   </div>
+  <div class="col-md-6">
+  <label class="form-label">Status</label>
+  <select id="visitStatus" class="form-select">
+  <option selected>${this.status}</option>
+  <option>${this.optionsStatus}</option>
+  </select>  
+</div>
   `
     );
+
+    this.modalBackground.addEventListener("click", (e) => {
+      if (e.target === this.modalBackground) {
+        this.modalBackground.remove();
+      }
+    });
     this.divButton.classList.add("divButton");
     this.divButton.append(this.submitButton);
     this.divButton.append(this.closeButton);

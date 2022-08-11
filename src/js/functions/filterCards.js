@@ -32,8 +32,8 @@ const filterArr = async (
 ) => {
   let filteredArr = await dataArray.filter(({ name, description }) => {
     return (
-      name.toLowerCase().includes(filterByValue.toLowerCase()) ||
-      description.toLowerCase().includes(filterByValue.toLowerCase())
+      name?.toLowerCase().includes(filterByValue.toLowerCase()) ||
+      description?.toLowerCase().includes(filterByValue.toLowerCase())
     );
   });
 
