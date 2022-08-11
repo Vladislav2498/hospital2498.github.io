@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="remake">
+      <change afterPath="$PROJECT_DIR$/src/js/api/deleteCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/classes/renderVisitCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/classes/renderVisitCards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/cards.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
