@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="remake">
+    <list default="true" id="f8bca460-c5da-4e3e-a207-222221277fe7" name="Changes" comment="fixed cards and added close btn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/Delete-80_icon-icons.com_57340.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/Delete-80_icon-icons.com_57340.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/classes/renderVisitCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/classes/renderVisitCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/cards.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/create_visit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/create_visit.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -73,6 +74,7 @@
       <workItem from="1659804114403" duration="308000" />
       <workItem from="1659986980457" duration="60000" />
       <workItem from="1660034749719" duration="797000" />
+      <workItem from="1660204302666" duration="4810000" />
     </task>
     <task id="LOCAL-00001" summary="styles 2.1">
       <created>1659908243347</created>
@@ -81,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659908243347</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed cards and added close btn">
+      <created>1660177609266</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660177609266</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remake" />
     <MESSAGE value="styles 2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="styles 2.1" />
+    <MESSAGE value="fixed cards and added close btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed cards and added close btn" />
   </component>
 </project>

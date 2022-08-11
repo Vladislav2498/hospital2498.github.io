@@ -14,7 +14,19 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     height: min-content;
-    min-height: 250px;
+    /*min-height: 200px;*/
+}
+
+.close-cross {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-left: auto;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.close-cross:hover {
 }
 
 .card__unit h2 {
