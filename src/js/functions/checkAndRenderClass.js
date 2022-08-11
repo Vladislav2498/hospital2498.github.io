@@ -33,6 +33,7 @@ const checkCard = (doctor, element) => {
       massIndex,
       diseases
     );
+
     visitsArray.push(newElement);
     newElement.render();
   } else if (doctor === "Dentist") {
@@ -58,6 +59,7 @@ const checkCard = (doctor, element) => {
       "show more",
       lastVisit
     );
+
     visitsArray.push(newElement);
     newElement.render();
   } else {
@@ -83,6 +85,7 @@ const checkCard = (doctor, element) => {
       "show more",
       age
     );
+
     visitsArray.push(newElement);
     newElement.render();
   }

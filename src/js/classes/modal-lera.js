@@ -132,7 +132,7 @@ class visitDentist extends ModalLera {
       "beforeend",
       `
        <div id="dentist" class=" col-12">
-              <label for="inputLastVisitDentist" class="form-label">Your last visit to doctor123:</label>
+              <label for="inputLastVisitDentist" class="form-label">Your last visit to doctor:</label>
               <input type="text" class="form-control" id="inputLastVisitDentist" placeholder="01.01.321" ">
         </div>
       `
@@ -327,6 +327,7 @@ const postRequest = async (
     checkCard("Therapist", recieveData);
     document.querySelector(".modal-background").remove();
   } else if (doctorName === "Cardiologist") {
+    debugger;
     const recieveData = await fetch(
       "https://ajax.test-danit.com/api/v2/cards",
       {
@@ -341,7 +342,6 @@ const postRequest = async (
           purpose: `${purpose}`,
           description: `${description}`,
           urgency: `${urgency}`,
-          lastVisit: `${lastVisit}`,
           ageCardiologist: `${ageCardiologist}`,
           pressure: `${pressure}`,
           massIndex: `${massIndex}`,

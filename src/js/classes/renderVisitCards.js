@@ -31,6 +31,7 @@ class VisitCards {
   }
 
   createElements() {
+    this.cardWrapper.classList.add(`card-id__${this.id}`);
     this.moreInfo.style.display = `${this.display}`;
     this.showMoreBtn = document.createElement("button");
     this.showMoreBtn.innerText = this.showMoreBtnText;
