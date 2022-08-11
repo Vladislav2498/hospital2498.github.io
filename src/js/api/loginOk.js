@@ -19,7 +19,7 @@ const getServerData = async () => {
     document.querySelector(".header__logIn--btn").innerText = "Create Visit";
     document.querySelector(
       ".card_container"
-    ).innerHTML = `<h2>the visits is empty</h2>`;
+    ).innerHTML = `<h2 class="empty-card">the visits is empty</h2>`;
   } else {
     document.querySelector(".header__logIn--btn").innerText = "Create Visit";
     // переписать на вызов модалки ивент листенер обязателен

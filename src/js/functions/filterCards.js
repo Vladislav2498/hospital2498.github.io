@@ -37,6 +37,7 @@ const filterArr = async (
     );
   });
 
+  console.log(filteredArr);
   const filterByPrior = filteredArr.filter((el) => {
     const { priority } = el;
     if (priorityValue === "Priority") {

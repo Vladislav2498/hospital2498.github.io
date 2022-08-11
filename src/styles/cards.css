@@ -17,6 +17,15 @@
     /*min-height: 200px;*/
 }
 
+.svg-width {
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+}
+
+.svg-width:hover > .close-cross > * {
+    fill: red;
+}
 .close-cross {
     width: 25px;
     height: 25px;
@@ -24,9 +33,7 @@
     margin-left: auto;
     background-size: cover;
     cursor: pointer;
-}
-
-.close-cross:hover {
+    fill: #62b1f6;
 }
 
 .card__unit h2 {
@@ -65,5 +72,3 @@
     background: rgba(48, 93, 184, 0.9);
     transition: 0.3s;
 }
-
-
