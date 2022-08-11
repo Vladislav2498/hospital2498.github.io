@@ -1,4 +1,5 @@
 import modalEdit from "./modal-edit.js";
+import ModalEditTherapist from "./modal-editTherapist.js";
 
 class DentistEdit extends modalEdit {
   constructor(
@@ -39,6 +40,7 @@ class DentistEdit extends modalEdit {
         </div>
       `
     );
+
     this.wrapperDiv.append(this.dentistContainer);
   }
   render() {
