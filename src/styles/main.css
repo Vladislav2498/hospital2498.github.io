@@ -18,6 +18,12 @@
   cursor: default;
 }
 
+.requiredFileds__error {
+  margin-top: 20px;
+  color: red;
+  font-size: 20px;
+}
+
 /*.bg_layer {*/
 /*  position: absolute;*/
 /*  z-index: 15;*/
@@ -26,7 +32,3 @@
 /*  background: #000;*/
 /*  opacity: 0.5;*/
 /*}*/
-
-
-
-
