@@ -20,6 +20,7 @@ class Modal {
     this.inputEmail.classList.add("login__input--information");
     this.labelEmail.classList.add("login__modal--label");
     this.labelEmail.innerText = "e-mail";
+    this.inputPassowrd.type = "password";
     this.inputPassowrd.classList.add("login__input--information");
     this.labelPassword.innerText = "password";
     this.submitBtn.classList.add("login__submit--btn");

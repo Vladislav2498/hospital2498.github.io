@@ -1,11 +1,8 @@
 "use strict";
 
 import checkCard from "../functions/checkAndRenderClass.js";
-
-// const openModalButton = document.querySelector("button");
-// openModalButton.addEventListener("click", () => {
-//     new ModalLera().render();
-// });
+import checkFields from "../functions/checkForRequiredFields.js";
+import visitsArray from "../index.js";
 
 class ModalLera {
   constructor() {
@@ -79,7 +76,7 @@ class ModalLera {
       this.container.classList.remove("modal");
       this.modalBackground.classList.remove("modal-background");
     });
-    this.submitButton.addEventListener("click", (e) => {
+    this.submitButton.addEventListener("click", async (e) => {
       getInputValuesRecieveRes();
     });
     this.submitButton.innerText = "CREATE VISIT";
@@ -241,6 +238,7 @@ const getInputValuesRecieveRes = () => {
   const searchDoctor = document.querySelector("#select-doctor")?.value;
   const searchDoctorText = document.querySelector("#select-doctor");
   const doctorName = searchDoctorText.querySelector("[selected]").textContent;
+  const doctor = searchDoctorText.querySelector("[selected]").value;
   const name = document.querySelector(".form-control")?.value;
   const purpose = document.querySelector("#inputWorriesDentist")?.value;
   const description = document.querySelector("#inputDescriptionDentist")?.value;
@@ -254,22 +252,48 @@ const getInputValuesRecieveRes = () => {
   const massIndex = document.querySelector("#inputIndexCardiologist")?.value;
   const diseases = document.querySelector("#inputDiseasesCardiologist")?.value;
   const status = "Open";
-  postRequest(
-    doctorName,
-    searchDoctor,
+
+  const checkInputs = checkFields(
+    doctor,
     name,
     purpose,
     description,
-    urgency,
     lastVisit,
-    ageTherapist,
     ageCardiologist,
+    ageTherapist,
     pressure,
     massIndex,
-    diseases,
-    status
+    diseases
   );
+
+  if (checkInputs) {
+    postRequest(
+      doctorName,
+      searchDoctor,
+      name,
+      purpose,
+      description,
+      urgency,
+      lastVisit,
+      ageTherapist,
+      ageCardiologist,
+      pressure,
+      massIndex,
+      diseases,
+      status
+    );
+  } else {
+    document.querySelector(".requiredFileds__error")?.remove();
+    const errContainer = document.querySelector(".modal").firstChild;
+    errContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+    <div class="requiredFileds__error"> Please, complete all fields before submiting</div>
+    `
+    );
+  }
 };
+
 const postRequest = async (
   doctorName,
   searchDoctor,
@@ -307,9 +331,16 @@ const postRequest = async (
     ).then((response) => response.json());
     console.log(recieveData);
     checkCard("Dentist", recieveData);
+    if (visitsArray.length === 0) {
+      document.querySelector(".header__logIn--btn").innerText = "Create Visit";
+      document.querySelector(
+        ".card_container"
+      ).innerHTML = `<h2 class="empty-card">the visits is empty</h2>`;
+    } else {
+      const err = document.querySelector(".empty-card")?.remove();
+    }
     document.querySelector(".modal-background").remove();
   } else if (doctorName === "Therapist") {
-    debugger;
     console.log(ageTherapist);
     const recieveData = await fetch(
       "https://ajax.test-danit.com/api/v2/cards",
@@ -332,6 +363,14 @@ const postRequest = async (
     ).then((response) => response.json());
     console.log(recieveData);
     checkCard("Therapist", recieveData);
+    if (visitsArray.length === 0) {
+      document.querySelector(".header__logIn--btn").innerText = "Create Visit";
+      document.querySelector(
+        ".card_container"
+      ).innerHTML = `<h2 class="empty-card">the visits is empty</h2>`;
+    } else {
+      const err = document.querySelector(".empty-card")?.remove();
+    }
     document.querySelector(".modal-background").remove();
   } else if (doctorName === "Cardiologist") {
     const recieveData = await fetch(
@@ -358,6 +397,14 @@ const postRequest = async (
     ).then((response) => response.json());
     document.querySelector(".modal-background").remove();
     checkCard("Cardiologist", recieveData);
+    if (visitsArray.length === 0) {
+      document.querySelector(".header__logIn--btn").innerText = "Create Visit";
+      document.querySelector(
+        ".card_container"
+      ).innerHTML = `<h2 class="empty-card">the visits is empty</h2>`;
+    } else {
+      const err = document.querySelector(".empty-card")?.remove();
+    }
   } else {
     console.log("error post information");
   }
