@@ -40,10 +40,10 @@ class ModalLera {
     this.optionCardiologist.value = "3";
     this.optionDefault.selected = true;
     this.select.append(
-      this.optionDefault,
-      this.optionDentist,
-      this.optionTherapist,
-      this.optionCardiologist
+        this.optionDefault,
+        this.optionDentist,
+        this.optionTherapist,
+        this.optionCardiologist
     );
     this.select.addEventListener("change", (e) => {
       chooseDoctorListener(e.target.value, this);
@@ -53,20 +53,27 @@ class ModalLera {
     this.container.classList.add("container", "modal");
     this.closeButton.innerText = "CANCEL";
     this.closeButton.classList.add(
-      "cancelVisit",
-      "modalButton",
-      "close",
-      "btn",
-      "btn-outline-danger"
+        "cancelVisit",
+        "modalButton",
+        "close",
+        "btn",
+        "btn-outline-danger"
     );
     this.submitButton.classList.add(
-      "createVisit",
-      "modalButton",
-      "btn",
-      "btn-success"
+        "createVisit",
+        "modalButton",
+        "btn",
+        "btn-success"
     );
     this.submitButton.type = "submit";
     this.submitButton.setAttribute("disabled", true);
+
+    this.modalBackground.addEventListener("click", (e) => {
+      if (e.target === this.modalBackground) {
+        this.modalBackground.remove();
+      }
+    });
+
     this.closeButton.addEventListener("click", (e) => {
       this.container.innerHTML = "";
       this.container.classList.remove("modal");
@@ -78,8 +85,8 @@ class ModalLera {
     this.submitButton.innerText = "CREATE VISIT";
     this.wrapperDiv.append(this.chooseDoctorP, this.select);
     this.wrapperDiv.insertAdjacentHTML(
-      "beforeend",
-      `
+        "beforeend",
+        `
   <form class=" row g-3">
   <div class="col-md-12">
       <label for="inputNameDentist" class="form-label">Name</label>
@@ -129,8 +136,8 @@ class visitDentist extends ModalLera {
     this.optionDentist.setAttribute("selected", "value");
     this.dentistContainer.classList.add(".dentistContainer");
     this.dentistContainer.insertAdjacentHTML(
-      "beforeend",
-      `
+        "beforeend",
+        `
        <div id="dentist" class=" col-12">
               <label for="inputLastVisitDentist" class="form-label">Your last visit to doctor123:</label>
               <input type="text" class="form-control" id="inputLastVisitDentist" placeholder="01.01.321" ">
@@ -157,8 +164,8 @@ class visitCardiologist extends ModalLera {
     this.optionCardiologist.setAttribute("selected", "value");
     this.cardiologistContainer.classList.add(".cardiologistContainer");
     this.cardiologistContainer.insertAdjacentHTML(
-      "afterbegin",
-      `
+        "afterbegin",
+        `
        <div class="row input-margin">
               <div class="col-md-6">
                   <label for="inputPressureCardiologist" class="form-label">Normal pressure</label>
@@ -201,8 +208,8 @@ class visitTherapist extends ModalLera {
     console.log(this.optionTherapist);
     this.therapistContainer.classList.add(".therapistContainer");
     this.therapistContainer.insertAdjacentHTML(
-      "afterbegin",
-      `
+        "afterbegin",
+        `
        <div class="col-12">
               <label for="inputAgeTherapist" class="form-label">Your age:</label>
               <input type="text" class="form-control" id="inputAgeTherapist" >
@@ -241,13 +248,29 @@ const getInputValuesRecieveRes = () => {
   const lastVisit = document.querySelector("#inputLastVisitDentist")?.value;
   const ageTherapist = document.querySelector("#inputAgeTherapist")?.value;
   const ageCardiologist = document.querySelector(
-    "#inputAgeCardiologist"
+      "#inputAgeCardiologist"
   )?.value;
   const pressure = document.querySelector("#inputPressureCardiologist")?.value;
   const massIndex = document.querySelector("#inputIndexCardiologist")?.value;
   const diseases = document.querySelector("#inputDiseasesCardiologist")?.value;
   const status = "Open";
   postRequest(
+      doctorName,
+      searchDoctor,
+      name,
+      purpose,
+      description,
+      urgency,
+      lastVisit,
+      ageTherapist,
+      ageCardiologist,
+      pressure,
+      massIndex,
+      diseases,
+      status
+  );
+};
+const postRequest = async (
     doctorName,
     searchDoctor,
     name,
@@ -261,42 +284,26 @@ const getInputValuesRecieveRes = () => {
     massIndex,
     diseases,
     status
-  );
-};
-const postRequest = async (
-  doctorName,
-  searchDoctor,
-  name,
-  purpose,
-  description,
-  urgency,
-  lastVisit,
-  ageTherapist,
-  ageCardiologist,
-  pressure,
-  massIndex,
-  diseases,
-  status
 ) => {
   if (doctorName === "Dentist") {
     const recieveData = await fetch(
-      "https://ajax.test-danit.com/api/v2/cards",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${localStorage.getItem("Authorization")}`,
-        },
-        body: JSON.stringify({
-          doctor: `${doctorName}`,
-          name: `${name}`,
-          purpose: `${purpose}`,
-          description: `${description}`,
-          urgency: `${urgency}`,
-          lastVisit: `${lastVisit}`,
-          status: "Open",
-        }),
-      }
+        "https://ajax.test-danit.com/api/v2/cards",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${localStorage.getItem("Authorization")}`,
+          },
+          body: JSON.stringify({
+            doctor: `${doctorName}`,
+            name: `${name}`,
+            purpose: `${purpose}`,
+            description: `${description}`,
+            urgency: `${urgency}`,
+            lastVisit: `${lastVisit}`,
+            status: "Open",
+          }),
+        }
     ).then((response) => response.json());
     console.log(recieveData);
     checkCard("Dentist", recieveData);
@@ -305,50 +312,49 @@ const postRequest = async (
     debugger;
     console.log(ageTherapist);
     const recieveData = await fetch(
-      "https://ajax.test-danit.com/api/v2/cards",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${localStorage.getItem("Authorization")}`,
-        },
-        body: JSON.stringify({
-          doctor: `${doctorName}`,
-          name: `${name}`,
-          purpose: `${purpose}`,
-          description: `${description}`,
-          urgency: `${urgency}`,
-          ageTherapist: `${ageTherapist}`,
-          status: "Open",
-        }),
-      }
+        "https://ajax.test-danit.com/api/v2/cards",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${localStorage.getItem("Authorization")}`,
+          },
+          body: JSON.stringify({
+            doctor: `${doctorName}`,
+            name: `${name}`,
+            purpose: `${purpose}`,
+            description: `${description}`,
+            urgency: `${urgency}`,
+            ageTherapist: `${ageTherapist}`,
+            status: "Open",
+          }),
+        }
     ).then((response) => response.json());
     console.log(recieveData);
     checkCard("Therapist", recieveData);
     document.querySelector(".modal-background").remove();
   } else if (doctorName === "Cardiologist") {
     const recieveData = await fetch(
-      "https://ajax.test-danit.com/api/v2/cards",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${localStorage.getItem("Authorization")}`,
-        },
-        body: JSON.stringify({
-          doctor: `${doctorName}`,
-          name: `${name}`,
-          purpose: `${purpose}`,
-          description: `${description}`,
-          urgency: `${urgency}`,
-          lastVisit: `${lastVisit}`,
-          ageCardiologist: `${ageCardiologist}`,
-          pressure: `${pressure}`,
-          massIndex: `${massIndex}`,
-          diseases: `${diseases}`,
-          status: "Open",
-        }),
-      }
+        "https://ajax.test-danit.com/api/v2/cards",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${localStorage.getItem("Authorization")}`,
+          },
+          body: JSON.stringify({
+            doctor: `${doctorName}`,
+            name: `${name}`,
+            purpose: `${purpose}`,
+            description: `${description}`,
+            urgency: `${urgency}`,
+            ageCardiologist: `${ageCardiologist}`,
+            pressure: `${pressure}`,
+            massIndex: `${massIndex}`,
+            diseases: `${diseases}`,
+            status: "Open",
+          }),
+        }
     ).then((response) => response.json());
     document.querySelector(".modal-background").remove();
     checkCard("Cardiologist", recieveData);
