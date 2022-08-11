@@ -26,19 +26,6 @@ const getServerData = async () => {
     JSON.parse(getCards).forEach((element) => {
       const { doctor } = element;
       checkCard(doctor, element);
-      // const { name, doctor, description, urgency, purpose, status, id } =
-      //   element;
-      // const newElement = new VisitCards(
-      //   name,
-      //   doctor,
-      //   description,
-      //   urgency,
-      //   purpose,
-      //   status,
-      //   id
-      // );
-      // visitsArray.push(newElement);
-      // newElement.render();
     });
   }
 };
